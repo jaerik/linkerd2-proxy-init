@@ -5,7 +5,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -o /out/linkerd2-proxy-init -mod=readonly -ldflags "-s -w" -v
 
 ## package runtime
-FROM debian:stretch-20190812-slim
+FROM debian:buster-20190910-slim
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         iptables \
